@@ -21,7 +21,6 @@ services:
       - /opt/appdata/transmission:/config
       - /mnt/media:/media
     ports:
-      - 8080:8080
       - 9091:9091
       - 51413:51413
       - 51413:51413/udp
