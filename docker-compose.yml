@@ -59,3 +59,15 @@ services:
       - PGID=${PGID}
     restart:
       always
+  jackett:
+    image: linuxserver/jackett
+    container_name: jackett
+    volumes:
+      - /opt/appdata/jackett:/config
+    ports:
+      - 9117:9117
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+    restart:
+      always
