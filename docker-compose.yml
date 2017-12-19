@@ -1,0 +1,61 @@
+# /opt/docker-compose.yml
+---
+version: '2'
+services:
+  sabnzbd:
+    image: linuxserver/sabnzbd
+    container_name: sabnzbd
+    volumes:
+      - /opt/appdata/sabnzbd:/config
+      - /mnt/media:/media
+    ports:
+      - 8080:8080
+    restart: always
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+  sonarr:
+    image: linuxserver/sonarr
+    container_name: sonarr
+    depends_on:
+      - sabnzbd
+    volumes:
+      - /opt/appdata/sonarr:/config
+      - /mnt/media:/media
+    ports:
+      - 8989:8989
+    links:
+      - sabnzbd
+    restart: always
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+  couchpotato:
+    image: linuxserver/couchpotato
+    container_name: couchpotato
+    depends_on:
+      - sabnzbd
+    volumes:
+      - /opt/appdata/couchpotato:/config
+      - /mnt/media:/media
+    ports:
+      - 5050:5050
+    links:
+      - sabnzbd
+    restart: always
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+  radarr:
+    image: linuxserver/radarr
+    container_name: radarr
+    volumes:
+      - /opt/appdata/radarr:/config
+      - /mnt/media:/media
+    ports:
+      - 7878:7878
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+    restart:
+      always
