@@ -1,2 +1,2 @@
 # docker-compose
-Your basic docker-compose yaml
+My docker-compose.yml
