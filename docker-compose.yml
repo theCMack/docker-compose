@@ -14,6 +14,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
+      - TZ=America/Chicago
   transmission:
     image: linuxserver/transmission
     container_name: transmission
@@ -28,6 +29,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
+      - TZ=America/Chicago
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
@@ -44,6 +46,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
+      - TZ=America/Chicago
   couchpotato:
     image: linuxserver/couchpotato
     container_name: couchpotato
@@ -60,6 +63,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
+      - TZ=America/Chicago
   radarr:
     image: linuxserver/radarr
     container_name: radarr
@@ -73,6 +77,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
+      - TZ=America/Chicago
     restart:
       always
   jackett:
@@ -87,5 +92,23 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
+      - TZ=America/Chicago
+    restart:
+      always
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    ports:
+      - 443:443
+    volumes:
+      - /opt/appdata/letsencrypt/config:/config
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=America/Chicago
+      - EMAIL=gregstengel@gmail.com
+      - URL=gmachine.net
+      - SUBDOMAINS=hollywood
+      - ONLY_SUBDOMAINS=true
     restart:
       always
