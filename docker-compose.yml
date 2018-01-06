@@ -103,8 +103,8 @@ services:
     volumes:
       - /opt/appdata/letsencrypt/config:/config
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
+      - PUID=1050
+      - PGID=1050
       - TZ=America/Chicago
       - EMAIL=gregstengel@gmail.com
       - URL=gmachine.net
