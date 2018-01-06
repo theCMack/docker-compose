@@ -64,22 +64,6 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=America/Chicago
-  radarr:
-    image: linuxserver/radarr
-    container_name: radarr
-    depends_on:
-      - sabnzbd
-    volumes:
-      - /opt/appdata/radarr:/config
-      - /mnt/media:/media
-    ports:
-      - 7878:7878
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=America/Chicago
-    restart:
-      always
   jackett:
     image: linuxserver/jackett
     container_name: jackett
