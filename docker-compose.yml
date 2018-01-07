@@ -103,9 +103,9 @@ services:
       - 8200:8200
     volumes:
       - /opt/appdata/duplicati/config:/config
-      - /mnt/media:/media
-      - /mnt/shared:/shared
-      - /mnt/usbhd:/usbhd
+      - /mnt/media:/mnt/media
+      - /mnt/shared:/mnt/shared
+      - /mnt/usbhd:/mnt/usbhd
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
