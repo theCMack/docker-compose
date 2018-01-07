@@ -96,3 +96,19 @@ services:
       - ONLY_SUBDOMAINS=true
     restart:
       always
+  duplicati:
+    image: linuxserver/duplicati
+    container_name: duplicati
+    ports:
+      - 8200:8200
+    volumes:
+      - /opt/appdata/duplicati/config:/config
+      - /mnt/media:/media
+      - /mnt/shared:/shared
+      - /mnt/usbhd:/usbhd
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=America/Chicago
+    restart:
+      always
