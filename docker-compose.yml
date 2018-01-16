@@ -15,17 +15,14 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=America/Chicago
-  transmission:
-    image: linuxserver/transmission
-    container_name: transmission
+  deluge:
+    image: linuxserver/deluge
+    container_name: deluge
     volumes:
-      - /opt/appdata/transmission:/config
+      - /opt/appdata/deluge:/config
       - /mnt/media:/downloads
-      - /mnt/media/_transmission:/watch
     ports:
-      - 9091:9091
-      - 51413:51413
-      - 51413:51413/udp
+      - 8112:8112 
     restart: always
     environment:
       - PUID=${PUID}
@@ -69,7 +66,7 @@ services:
     image: linuxserver/jackett
     container_name: jackett
     depends_on:
-      - transmission
+      - deluge
     volumes:
       - /opt/appdata/jackett:/config
     ports:
