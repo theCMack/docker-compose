@@ -20,7 +20,8 @@ services:
     container_name: transmission
     volumes:
       - /opt/appdata/transmission:/config
-      - /mnt/media:/media
+      - /mnt/media:/downloads
+      - /mnt/media/_transmission:/watch
     ports:
       - 9091:9091
       - 51413:51413
