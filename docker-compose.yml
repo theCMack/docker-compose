@@ -22,7 +22,7 @@ services:
       - /opt/appdata/deluge:/config
       - /mnt/media:/downloads
     ports:
-      - 8112:8112 
+      - 8112:8112
     restart: always
     environment:
       - PUID=${PUID}
@@ -110,3 +110,20 @@ services:
       - TZ=America/Chicago
     restart:
       always
+  radarr:
+      image: linuxserver/radarr
+      container_name: radarr
+      depends_on:
+        - sabnzbd
+      volumes:
+        - /opt/appdata/radarr:/config
+        - /mnt/media:/media
+      ports:
+        - 7878:7878
+      links:
+        - sabnzbd
+      restart: always
+      environment:
+        - PUID=${PUID}
+        - PGID=${PGID}
+        - TZ=America/Chicago
