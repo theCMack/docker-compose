@@ -14,7 +14,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ=America/Chicago
+      - TZ=America/New_York
   deluge:
     image: linuxserver/deluge
     container_name: deluge
@@ -27,7 +27,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ=America/Chicago
+      - TZ=America/New_York
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
@@ -44,24 +44,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ=America/Chicago
-  couchpotato:
-    image: linuxserver/couchpotato
-    container_name: couchpotato
-    depends_on:
-      - sabnzbd
-    volumes:
-      - /opt/appdata/couchpotato:/config
-      - /mnt/media:/media
-    ports:
-      - 5050:5050
-    links:
-      - sabnzbd
-    restart: always
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=America/Chicago
+      - TZ=America/New_York
   jackett:
     image: linuxserver/jackett
     container_name: jackett
@@ -74,7 +57,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ=America/Chicago
+      - TZ=America/New_York
     restart:
       always
   letsencrypt:
@@ -87,27 +70,11 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ=America/Chicago
+      - TZ=America/New_York
       - EMAIL=gregstengel@gmail.com
       - URL=gmachine.net
-      - SUBDOMAINS=hollywood
+      - SUBDOMAINS=ferris
       - ONLY_SUBDOMAINS=true
-    restart:
-      always
-  duplicati:
-    image: linuxserver/duplicati
-    container_name: duplicati
-    ports:
-      - 8200:8200
-    volumes:
-      - /opt/appdata/duplicati/config:/config
-      - /mnt/media:/mnt/media
-      - /mnt/shared:/mnt/shared
-      - /mnt/usbhd:/mnt/usbhd
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=America/Chicago
     restart:
       always
   radarr:
@@ -126,4 +93,18 @@ services:
       environment:
         - PUID=${PUID}
         - PGID=${PGID}
-        - TZ=America/Chicago
+        - TZ=America/New_York
+  portainer:
+      image: portainer/portainer
+      container_name: portainer
+      ports:
+        - 9000:9000
+      volumes:
+        - /opt/appdata/portainer:/data
+        - /var/run/docker.sock:/var/run/docker.sock
+      restart:
+        always
+      environment:
+        - PUID=${PUID}
+        - PGID=${PGID}
+        - TZ=America/New_York
