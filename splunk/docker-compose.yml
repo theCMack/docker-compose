@@ -35,9 +35,6 @@ services:
       - opt-splunksh1-var:/opt/splunk/var
     ports:
       - "8001:8000"
-      - "9997:9997"
-      - "8088:8088"
-      - "1514:1514"
       
   splunksh2:
     #build: .
@@ -52,9 +49,6 @@ services:
       - opt-splunksh2-var:/opt/splunk/var
     ports:
       - "8002:8000"
-      - "9997:9997"
-      - "8088:8088"
-      - "1514:1514"
       
   splunksh3:
     #build: .
@@ -69,9 +63,6 @@ services:
       - opt-splunksh3-var:/opt/splunk/var
     ports:
       - "8003:8000"
-      - "9997:9997"
-      - "8088:8088"
-      - "1514:1514"
       
   splunkidx1:
     #build: .
@@ -86,9 +77,6 @@ services:
       - opt-splunkidx1-var:/opt/splunk/var
     ports:
       - "8011:8000"
-      - "9997:9997"
-      - "8088:8088"
-      - "1514:1514"
       
   splunkidx2:
     #build: .
@@ -103,9 +91,6 @@ services:
       - opt-splunkidx2-var:/opt/splunk/var
     ports:
       - "8012:8000"
-      - "9997:9997"
-      - "8088:8088"
-      - "1514:1514"
       
   splunkidx3:
     #build: .
@@ -120,9 +105,6 @@ services:
       - opt-splunkidx3-var:/opt/splunk/var
     ports:
       - "8013:8000"
-      - "9997:9997"
-      - "8088:8088"
-      - "1514:1514"
       
   splunkcm1:
     #build: .
@@ -137,9 +119,6 @@ services:
       - opt-splunkcm1-var:/opt/splunk/var
     ports:
       - "8021:8000"
-      - "9997:9997"
-      - "8088:8088"
-      - "1514:1514"
       
   splunkds1:
     #build: .
@@ -154,9 +133,6 @@ services:
       - opt-splunkds1-var:/opt/splunk/var
     ports:
       - "8022:8000"
-      - "9997:9997"
-      - "8088:8088"
-      - "1514:1514"
       
   splunkhf1:
     #build: .
