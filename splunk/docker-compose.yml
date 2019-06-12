@@ -1,0 +1,177 @@
+---
+version: '3'
+
+volumes:
+  opt-splunksh1-etc:
+  opt-splunksh1-var:
+  opt-splunksh2-etc:
+  opt-splunksh2-var:
+  opt-splunksh3-etc:
+  opt-splunksh3-var:
+  opt-splunkidx1-etc:
+  opt-splunkidx1-var:
+  opt-splunkidx2-etc:
+  opt-splunkidx2-var:
+  opt-splunkidx3-etc:
+  opt-splunkidx3-var:
+  opt-splunkcm1-etc:
+  opt-splunkcm1-var:
+  opt-splunkds1-etc:
+  opt-splunkds1-var:
+  opt-splunkhf1-etc:
+  opt-splunkhf1-var:
+
+services:
+  splunksh1:
+    #build: .
+    hostname: splunksh1
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunksh1-etc:/opt/splunk/etc
+      - opt-splunksh1-var:/opt/splunk/var
+    ports:
+      - "8001:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+      
+  splunksh2:
+    #build: .
+    hostname: splunksh2
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunksh2-etc:/opt/splunk/etc
+      - opt-splunksh2-var:/opt/splunk/var
+    ports:
+      - "8002:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+      
+  splunksh3:
+    #build: .
+    hostname: splunksh3
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunksh3-etc:/opt/splunk/etc
+      - opt-splunksh3-var:/opt/splunk/var
+    ports:
+      - "8003:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+      
+  splunkidx1:
+    #build: .
+    hostname: splunkidx1
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunkidx1-etc:/opt/splunk/etc
+      - opt-splunkidx1-var:/opt/splunk/var
+    ports:
+      - "8011:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+      
+  splunkidx2:
+    #build: .
+    hostname: splunkidx2
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunkidx2-etc:/opt/splunk/etc
+      - opt-splunkidx2-var:/opt/splunk/var
+    ports:
+      - "8012:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+      
+  splunkidx3:
+    #build: .
+    hostname: splunkidx3
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunkidx3-etc:/opt/splunk/etc
+      - opt-splunkidx3-var:/opt/splunk/var
+    ports:
+      - "8013:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+      
+  splunkcm1:
+    #build: .
+    hostname: splunkcm1
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunkcm1-etc:/opt/splunk/etc
+      - opt-splunkcm1-var:/opt/splunk/var
+    ports:
+      - "8021:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+      
+  splunkds1:
+    #build: .
+    hostname: splunkds1
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunkds1-etc:/opt/splunk/etc
+      - opt-splunkds1-var:/opt/splunk/var
+    ports:
+      - "8022:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+      
+  splunkhf1:
+    #build: .
+    hostname: splunkhf1
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunkhf1-etc:/opt/splunk/etc
+      - opt-splunkhf1-var:/opt/splunk/var
+    ports:
+      - "8023:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+      
