@@ -28,6 +28,7 @@ services:
     image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: changeme
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
@@ -42,6 +43,7 @@ services:
     image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: changeme
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
@@ -56,6 +58,7 @@ services:
     image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: changeme
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
@@ -70,6 +73,7 @@ services:
     image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: changeme
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
@@ -84,6 +88,7 @@ services:
     image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: changeme
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
@@ -98,6 +103,7 @@ services:
     image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: changeme
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
@@ -112,6 +118,7 @@ services:
     image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: changeme
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
@@ -126,6 +133,7 @@ services:
     image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: changeme
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
@@ -140,6 +148,7 @@ services:
     image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: changeme
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
